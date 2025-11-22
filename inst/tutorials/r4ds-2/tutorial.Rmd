@@ -1320,7 +1320,7 @@ Covariation is the tendency for the values of two or more variables to vary toge
 Ask AI to write R code to create a scatter plot form `wine_tibble` to explore the relationship of `Phenols` and `Flavanoids`, two categorical variables with a loess smoothing curve that shows the outlier.
 
 Copy and paste our specific prompt into the AI:
-
+<!-- PG:Condense AI prompt to "Create a scatter plot from wine_tibble with Phenols vs Flavanoids, colored by Color. Include jittered points, a LOESS smooth curve, and label the maximum Flavanoids value as 'Outlier' in magenta. Use blue-to-orange color gradient and classic theme." -->
 "Please write R code using `ggplot2` to create a scatter plot from the `wine_tibble` dataset. Use `ggplot(aes(x = Phenols, y = Flavanoids, color = Color))` and add points with `geom_point(size = 2, alpha = 0.5)` followed by `geom_jitter()` to spread overlapping points. Add a LOESS smoothing curve using `geom_smooth(method = "loess", se = TRUE, color = "black")`. Use `geom_text()` with `dplyr::filter()` inside a lambda function to label only the row where `Flavanoids` is equal to its maximum, setting `label = "Outlier"`, `nudge_y = 0.2`, `color = "magenta"`, and `fontface = "bold"`. Apply `scale_color_gradient(low = "blue", high = "orange")`, then format the plot with `theme_classic()` and `labs(title = "Wine: Flavanoids vs Phenols", x = "Phenols", y = "Flavanoids")`."
 
  Add this code into a new code chunk in your QMD.  Place your cursor on the first line of the code in your current code chunk at the start of `wine_tibble` and run `Cmd/Ctrl + Shift + K` to render.
